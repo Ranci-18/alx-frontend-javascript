@@ -1,4 +1,11 @@
 /* module defining a promise function */
 export default function getResponseFromAPI() {
-    return Promise.resolve();
+    const login = true;
+    return Promise((resolve, reject) => {
+        if (login) {
+          resolve()
+        } else {
+          reject();
+        }
+    });
 }
