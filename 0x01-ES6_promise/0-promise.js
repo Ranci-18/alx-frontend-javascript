@@ -1,7 +1,7 @@
 /* module defining a promise function */
 export default function getResponseFromAPI() {
     const login = true;
-    return Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
         if (login) {
           resolve()
         } else {
