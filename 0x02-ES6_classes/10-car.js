@@ -8,5 +8,12 @@ export default class Car {
     this._color = color;
   }
 
-  cloneCar = () => new Car(this._brand, this._motor, this._color);
+  static get [Symbol.species]() {
+    return this;
+  }
+
+  cloneCar() {
+    const TheCar = this.constructor[Symbol.species];
+    return new TheCar();
+  }
 }
